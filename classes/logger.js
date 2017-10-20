@@ -9,8 +9,9 @@ class Logger {
      * @param {string} description The description of the log message.
      */
     log(title, description) {
+        const logTime = !process.env.DONTLOGTIME;
         const time = moment().format('YYYY-MM-DD HH:mm:ss');
-        console.log(`${time} ||  ${'LOG'.green}  || ${title}${description ? ` | ${description}` : ''}`); //eslint-disable-line no-console
+        console.log(`${!logTime ? `${time} || ` : '' } ${'LOG'.green}  || ${title}${description ? ` | ${description}` : ''}`); //eslint-disable-line no-console
     }
 
     /**
@@ -19,8 +20,9 @@ class Logger {
      * @param {string} description The description of the error message.
      */
     error(title, description) {
+        const logTime = !process.env.DONTLOGTIME;
         const time = moment().format('YYYY-MM-DD HH:mm:ss');
-        console.error(`${time} || ${'ERROR'.red} || ${title}${description ? ` | ${description}` : ''}`); //eslint-disable-line no-console
+        console.error(`${!logTime ? `${time} || ` : '' }${'ERROR'.red} || ${title}${description ? ` | ${description}` : ''}`); //eslint-disable-line no-console
     }
 }
 
