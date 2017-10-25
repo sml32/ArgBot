@@ -22,7 +22,7 @@ class Logger {
     error(title, description) {
         const logTime = !process.env.DONTLOGTIME;
         const time = moment().format('YYYY-MM-DD HH:mm:ss');
-        console.error(`${!logTime ? `${time} || ` : '' }${'ERROR'.red} || ${title}${description ? ` | ${description}` : ''}`); //eslint-disable-line no-console
+        console.error(`${logTime ? `${time} || ` : '' }${'ERROR'.red} || ${title}${description ? ` | ${description}` : ''}`); //eslint-disable-line no-console
     }
 }
 
