@@ -1,7 +1,7 @@
-const Logger                 = require('./classes/logger');
-const EventLoader            = require('./classes/eventLoader.js');
-const CommandLoader          = require('./classes/commandLoader.js');
 const { Client, Collection } = require('discord.js');                 //eslint-disable-line no-unused-vars
+const CommandLoader          = require('./classes/commandLoader.js');
+const tvde1logger            = require('tvde1logger');
+const EventLoader            = require('./classes/eventLoader.js');
 
 class ExtendedClient extends Client {
     constructor() {
@@ -9,7 +9,7 @@ class ExtendedClient extends Client {
 
         this._config        = readConfig();
 
-        this._logger        = new Logger(this.config.channels);
+        this._logger        = new tvde1logger('ArgBot', !process.env.DONTLOGTIME);
         const eventLoader   = new EventLoader(this);
         this._commandLoader = new CommandLoader(this.logger);
 
