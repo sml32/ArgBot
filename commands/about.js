@@ -10,7 +10,7 @@ Some commands are:
 arg!ping, arg!args
 \`\`\`
 
-Bot is made by @Tvde1#9191
+Bot is made by @Tvde1#0001
 `);
 };
 
