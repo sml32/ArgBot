@@ -31,7 +31,3 @@ class ExtendedClient extends Client {
 }
 
 module.exports = ExtendedClient;
-
-const readConfig = () => {
-    return process.env.CONFIG_ARGBOT ? JSON.parse(process.env.CONFIG_ARGBOT) : require('./config.json');
-};
