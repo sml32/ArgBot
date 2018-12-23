@@ -7,8 +7,6 @@ class ExtendedClient extends Client {
     constructor() {
         super();
 
-        this._config        = readConfig();
-
         this._logger        = new tvde1logger('ArgBot', !process.env.DONTLOGTIME);
         const eventLoader   = new EventLoader(this);
         this._commandLoader = new CommandLoader(this.logger);
@@ -16,14 +14,7 @@ class ExtendedClient extends Client {
         this._commandLoader.load();
         eventLoader.load();
     }
-
-    /**
-     * @returns {Logger}
-     */
-    get logger() {
-        return this._logger;
-    }
-
+    
     /**
      * @returns {*}
      */
